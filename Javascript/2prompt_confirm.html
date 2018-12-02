@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+  
+    <form action="">
+        <input type="text" id="name">
+    </form>
+    
+    <script>
+       
+        function disp(){
+            var val1 = prompt("enter value1", 20);
+            var val2 = prompt("enter value2");
+            var val3 = prompt("enter value3");
+           
+            
+            var confirm3 = confirm("do you want to output");//true/false
+                if(confirm3 == true){
+                    if(parseInt(val1) > parseInt(val2) && parseInt(val1) > parseInt(val3)) {
+                    alert(val1+ " is greater");
+                }
+                else if(parseInt(val2) > parseInt(val1) && parseInt(val2) > parseInt(val3)) {
+                    alert(val1+ " is greater");
+                }
+                else{
+                    alert(val3+"greater");
+                }
+            }else {
+                alert("Sorry. Please enter again for results...");
+            }
+        }
+        disp();
+
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function disp(){
+            var name = document.getElementById("name").value;
+            var div = document.getElementById("div").innerHTML;
+            alert(name+div);
+        }
+    </script>
+</head>
+<body>
+    Name <input type="text" id="name" value="">
+    <div id="div">This is div tag
+
+        <p>This is paragraph</p>
+    </div>
+    <input type="submit" value="submit" onclick="disp()">
+
+</body>
+</html>

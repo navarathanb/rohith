@@ -1,0 +1,161 @@
+* {
+    margin: 0px; padding: 0px;
+}
+/* mobile screen */
+.container {
+    width: 100%; height: 500px;
+
+}
+.header {
+    height: 60px;  background: rgba(211, 211, 211, 0.507);
+}
+.menu {
+    height: auto; background: white; display: none;
+}
+.menu ul {
+    list-style: none;     
+}
+.menu ul li {
+    height: 30px; background: orange;  line-height: 30px;
+    text-align: center; margin-bottom: 2px;
+}
+.menu ul li a {
+    color: white; text-decoration: none;
+}
+.menu ul li:hover {
+    background: rgb(21, 189, 21)
+}
+.slider {
+
+}
+.slider img {
+    width: 100%;
+}
+.product .image {
+    width: 80%;
+    margin: 5px 10%;
+    opacity: 0.6;
+}
+.product:hover .image {
+    opacity: 1;
+}
+.product .title {
+    text-align: center;
+    color: green;
+}
+.product .cost {
+    text-align: center;
+    color: orange;
+    margin-top: 10px;
+}
+.product .cart {
+    text-align: center;
+    display: block;
+    background: rgb(83, 83, 226);
+    width: 40%;
+    margin: 5px 30%;
+    height: 35px;
+    color: white;
+    line-height: 35px;
+    text-decoration: none;
+}
+.products {
+    width: 100%;
+}
+.products .product {
+    width:98% !important;
+    height: auto;
+    box-shadow: 0px 0px 10px gray;
+    float: left;
+    margin-left: 1%;
+    padding-bottom: 10px;
+    margin-top: 5px;
+}
+.header .logo {
+    width: 30%;
+}
+.icon {
+    float: right;
+    margin-right: 20px;margin-top: 17.5px;
+}
+.icon .iconfas {
+    font-size: 25px;
+}
+
+@media only screen and (min-width: 486px){
+    .container {
+        height: 300px;
+    }
+    .header {
+        height: 80px; 
+    }
+    
+    
+    .menu ul li {
+        height: 35px;   line-height: 35px;
+       
+    }
+    .products {
+        width: 100%;
+    }
+    .products .product {
+        width:49% !important;
+        height: auto;
+        box-shadow: 0px 0px 10px gray;
+        float: left;
+        margin-left: 0.6%;
+        padding-bottom: 10px;
+        margin-top: 10px;
+    }
+    .hide_tablet {
+        display: none;
+    }
+
+    .icon {
+        float: right;
+        margin-right: 20px;margin-top: 25px;
+    }
+    .icon .iconfas {
+        font-size: 28px;
+    }
+    
+
+   
+}
+@media only screen and (min-width: 1100px){
+    .container {
+        width: 90%; 
+        margin: 0px auto;
+    }
+    .header {
+        height: 100px; background: rgb(40, 40, 214);
+    }
+    .menu {
+        height: 40px; background: green; display: block;
+    }
+   
+    .menu ul li {
+        width: 19%; height: 40px;  float: left; line-height: 40px;margin-left: 0.83%;
+        
+    }
+    .products {
+        width: 100%;
+    }
+    .products .product {
+        width:32% !important;
+        height: auto;
+        box-shadow: 0px 0px 10px gray;
+        float: left;
+        margin-left: 1%;
+        padding-bottom: 10px;
+        margin-top: 10px;
+        display: block;
+    }
+    .disp {
+        width: 32%;
+    }
+    .icon {
+        display: none;
+    }
+
+}

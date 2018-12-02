@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #res {
+            width: 300px; height: 200px; border: 2px solid gray; padding: 10px; text-align: justify;
+            display: none;
+        }
+    </style>
+    <script>
+        function disp(val){
+            document.getElementById("res").style.display = 'block';
+            document.getElementById("res").style.height = 'auto';
+           if(val == 'AP state'){
+               document.getElementById("res").innerHTML = "<h2>"+val+"</h2><p>Andhra Pradesh is a state bordering India’s southeastern coast. Major cultural landmarks include Tirumala Venkateswara Temple, an ornate hilltop shrine to Hindu’s Vishnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ramakrishna and Rishikonda lining the Bay of Bengal, offering spots for swimming and surfing.</p>";
+           }
+           
+           else if(val == 'UP state'){
+               document.getElementById("res").innerHTML = "<h2>"+val+"</h2><p>Uttar Pradesh hnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ramis a state bordering India’s southeastern coast. Major cultural landmarks include Tirumala Venkateswara Temple, an ornate hilltop shrine to Hindu’s Visakrishna and Rishikonda lining the Bay of Bengal, offering spots for swimming and surfing.</p>";
+           }
+          else if(val == 'TS state'){
+               document.getElementById("res").innerHTML = "<h2>"+val+"</h2><p>Telanganga State is a state bordering India’s southeastern coast. Major cultural landmarks include Tirumala Venkateswara Temple, an ornate hilltop shrine to Hindu’s Vishnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ramakrishna and Rishikonda lining the Bay of Bengal, offering spots for swimming and surfing .hnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ram.</p>";
+           }else{
+               document.getElementById("res").innerHTML = "Please select any state .";
+           }
+
+        }
+    </script>
+</head>
+<body>
+    <select name="" id="state" onchange="disp(this.value)">
+        <option>select state</option>>
+        <option>AP state</option>>
+        <option>UP state</option>>
+        <option>TS state</option>>
+    </select>
+    <div id="res">
+
+    </div>
+</body>
+</html>
