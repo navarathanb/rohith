@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider {
+            width: 1000px;height: 400px; margin: 0px auto; 
+        }
+        .slider img {
+            width: 1000px;height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider" onmouseover="stopAnimation()">
+        <img src="img/s1.jpg" alt="" name = "image">
+    </div>
+    <script>
+        var arr = ["img/s2.jpg","img/s3.jpg","img/s4.jpg","img/s5.jpg","img/s1.jpg","img/s6.jpg"];
+        var i=0,start;
+        // debugger;
+        function disp(){
+            document.image.src = arr[i];
+            i++;
+            if(i >= arr.length){
+                i = 0;
+            }
+            start = setInterval("disp()", 2000);
+        }
+        
+        function stopAnimation(){
+            clearInterval(start);
+        }
+
+        setTimeout("disp()", 5000)
+    </script>
+</body>
+</html>
