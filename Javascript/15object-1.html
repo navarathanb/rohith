@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <script>
+        // var name = "james";
+        // name.slice();
+        //  name.length;
+    //OOPS - 1: encapsulation, 2: abstraction, 3: polymorphism
+    //encapsulation: wrapping of data(variables) and code(functions) into a single unit
+
+
+        function disp(mobile){
+            this.name = "james";
+            this.email = "james@mgila.com";
+            this.mobile = mobile;
+            this.getDisp = function(){
+
+                return "Name : "+this.name+"<br>Email : "+this.email+"<br>Mobile : "+this.mobile;
+            };
+            this.helloUser  = function(){
+                return "Hello "+this.name;
+            }
+        }
+        
+        var obj = new disp(3423423423);
+        document.getElementById("res2").innerHTML = obj.getDisp();
+        document.getElementById("res1").innerHTML = "<h2>"+obj.helloUser()+"</h2>";
+
+    </script>
+</body>
+</html>

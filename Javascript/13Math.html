@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp1">
+    <input type="text" id="inp2">
+    <input type="submit" value="submit" id="btn" >
+    <div id="res"></div>
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            var inp1 = document.getElementById("inp1").value;
+            var inp2 = document.getElementById("inp2").value;
+        //    document.getElementById("res").innerHTML = Math.sqrt(inp1);
+           document.getElementById("res").innerHTML = Math.pow(inp1,inp2);
+        //    document.getElementById("res").innerHTML = Math.random();
+            // document.getElementById("res").innerHTML = Math.ceil(inp1);
+            // document.getElementById("res").innerHTML = Math.floor(inp1);
+            // document.getElementById("res").innerHTML = Math.PI;
+            // document.getElementById("res").innerHTML = Math.sin(inp1);
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            function disp(email){
+                
+                var arr = email.split("@"); // convert string to array => rathan, gmail.com
+                var userid = arr[0];// rathan
+                var password;
+                /*
+                slice(2) - from 2nd character,
+                slice(2,5) - from 2nd to 4th char
+                slice(-5,-2) - from last,
+                slice(-5) - from last
+
+                */
+                var rand = Math.random()+'';//'0.993294234234'
+                password = '@'+userid.slice(2,4)+rand.slice(3,7)+'_'+userid.slice(-3,-1)+'Xyb';
+                document.getElementById("res").innerHTML = "Password : "+password;
+            }
+        </script>
+</head>
+<body>
+    Email : <input type="text" id="email" onkeyup="disp(this.value)">
+    
+    <div id="res"></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <script>
+        // var arr = new Array("james","sai","kims");
+        // var arr = ["james","sai","kims"];
+        // arr.push();
+        // var obj = new Object();
+        // var obj = {"name":"james","email":"james@gmail.com","getData":function(){
+        //     return obj.name;
+        // }};
+        // obj.name;
+        // obj.email;
+        // str.length;
+        // str.slice();
+        // obj.getData();
+            /*
+  function disp(mobile){
+            this.name = "james";
+            this.email = "james@mgila.com";
+            this.mobile = mobile;
+            this.getDisp = function(){
+
+                return "Name : "+this.name+"<br>Email : "+this.email+"<br>Mobile : "+this.mobile;
+            };
+            this.helloUser  = function(){
+                return "Hello "+this.name;
+            }
+        }
+        
+        var obj = new disp(3423423423);
+        document.getElementById("res2").innerHTML = obj.getDisp();
+        document.getElementById("res1").innerHTML = "<h2>"+obj.helloUser()+"</h2>";
+
+            */
+
+        var obj = {
+            "name":"james",
+            "email":"james@gmail.com",
+            "mobile":234234234,
+            "getDisp": function(){
+                return "Name : "+this.name+"<br>Email : "+this.email+"<br>Mobile : "+this.mobile;
+            },
+            "helloUser":  function(){
+                return "Hello "+this.name;
+            }
+        }
+        document.getElementById("res2").innerHTML = obj.getDisp();
+        document.getElementById("res1").innerHTML = "<h2>"+obj.helloUser()+"</h2>";
+    </script>
+</body>
+</html>

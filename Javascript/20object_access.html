@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        var student = {
+            "fname":"james",
+            "lname":"patrik",
+            "fullname":function(){
+                return student.fname+" "+student.lname;
+            },
+            "fess":"2000$",
+            "sub":[{"name":"Maths","marks":90,"rank":8},{"name":"Physics","marks":80,"rank":12},{"name":"Chemistry","marks":90,"rank":6},{"name":"Telugu","marks":91,"rank":8},{"name":"English","marks":84,"rank":9},{"name":"Hindi","marks":70,"rank":14}],
+            "marks":function(){
+                var subjects = student.sub;
+                var total = 0;
+                for(i=0;i<subjects.length;i++){
+                    total += subjects[i].marks;
+                }
+                return total;
+            },
+            "avgRank":function(){
+                var subjects = student.sub;
+                var total = 0;
+                for(i=0;i<subjects.length;i++){
+                    total += subjects[i].rank;
+                }
+                return Math.ceil(total/subjects.length);
+            }
+
+        }
+        var table = "<table border='1' width='400' cellpadding='10'><tr><td>First Name</td><td colspan='2'>"+student.fname+"</td></tr><tr><td>Last Name</td><td colspan='2'>"+student.lname+"</td></tr><tr><td>Full Name</td><td colspan='2'>"+student.fullname()+"</td></tr><tr><td>Fees</td><td colspan='2'>"+student.fees+"</td></tr><tr><td>Subject</td><td>Marks</td><td>Rank</td></tr>"  ;
+        for(i=0;i<student.sub.length;i++){
+            table += "<tr><td>"+student.sub[i].name+"</td><td>"+student.sub[i].marks+"</td><td>"+student.sub[i].rank+"</td></tr>";
+        }
+        table += "<tr><td>Total</td><td>"+student.marks()+"</td><td>"+student.avgRank()+"</td></tr></table>";
+        
+        document.getElementById("result").innerHTML = table;
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        // json  -  javascript object notation.
+        var students = [{"name":"james","email":"james@gmail.com","mobile":234234234,"id":100},{"name":"kishore","email":"kishore@gmail.com","mobile":4234234,"id":101},{"name":"sai","email":"sai@gmail.com@gmail.com","mobile":234234234,"id":102},{"name":"suresh","email":"suresh@gmail.com","mobile":2342342,"id":103},{"name":"kishore","email":"kishore@gmail.com","mobile":23423423,"id":104}];
+        
+        var table = "<table border='1' cellpadding='10' width='500'><tr><td>Id</td><td>Name</td><td>Email</td><td>Mobile</td></tr>";
+         for(i=0;i<students.length;i++)  {
+             table += "<tr><td>"+students[i].id+"</td><td>"+students[i].name+"</td><td>"+students[i].email+"</td><td>"+students[i].mobile+"</td></tr>";
+         } 
+         table += "</table>";
+         document.getElementById("result").innerHTML = table;
+
+    </script>
+</body>
+</html>

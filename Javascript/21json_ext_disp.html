@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #result, #form {
+            width: 600px; height: auto; padding: 10px; border: 2px solid green; float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <div id="form">
+        ID: <input type="text" name="" id="id">
+        <br>
+        <br>
+        Name : <input type="text" id="name">
+        <br><br>
+        Email : <input type="text" id="email">
+        <br><br>
+        Mobile : <input type="text" id="mobile">
+        <br><br>
+        <input type="submit" value="insert" onclick="insert()" id="insert">
+        <input type="submit" value="update" onclick="update()" id="update" style="display: none;">
+    </div>
+    <script>
+        var obj,student;
+        if(window.XMLHttpRequest){ //except IE 5 & 6
+            obj = new XMLHttpRequest();
+        }
+        else{ //ie 5 & 6
+            obj = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        obj.onreadystatechange = function(){
+            if(obj.status == 200 && obj.readyState == 4){
+               student = JSON.parse(obj.responseText);
+               getDisp(student);
+            }
+        }
+
+        obj.open("GET","jsonData.txt",true); //true - asynchrous, false - synchronous
+        obj.send();
+
+        function getDisp(students){
+            // var k = 100;
+            var table = "<table border='1' cellpadding='10' width='500'><tr><td><input type='submit' value='+'></td><td>Id</td><td>Name</td><td>Email</td><td>Mobile</td><td>X</td></tr>";
+         for(i=0;i<students.length;i++)  {
+             table += "<tr><td><input type='submit' value='+' onclick = 'edit("+i+")' ></td><td>"+student[i].id +"</td><td>"+students[i].name+"</td><td>"+students[i].email+"</td><td>"+students[i].mobile+"</td><td><input type='submit' value='X' onclick='del("+i+")'></td></tr>";
+         } 
+         table += "</table>";
+         document.getElementById("result").innerHTML = table;
+        }
+        
+        //insert new record
+        function insert(){
+            var id = student[student.length-1].id+1;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+
+
+            student.push({"name":name,"email":email,"mobile":mobile,"id":id});
+            getDisp(student);
+            document.getElementById("id").value = '';
+            document.getElementById("name").value = '';
+            document.getElementById("email").value = '';
+            document.getElementById("mobile").value = '';
+        }
+        function del(ind){
+            // alert(ind)
+            student.splice(ind,1);
+            getDisp(student);
+        }
+
+        function edit(ind){
+            // alert(ind)
+            document.getElementById("update").style.display = '';
+            document.getElementById("insert").style.display = 'none';
+            document.getElementById("id").value = student[ind].id;
+            document.getElementById("name").value = student[ind].name;
+            document.getElementById("email").value = student[ind].email;
+            document.getElementById("mobile").value = student[ind].mobile;
+            document.getElementById("id").disabled = true;
+        }
+        
+        function update(){
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            for(i=0;i<student.length;i++){
+                if(student[i].id == id){
+                    student.splice(i,1,{"name":name,"email":email,"mobile":mobile,"id":id});
+                }
+            }
+            getDisp(student);
+            document.getElementById("update").style.display = 'none';
+            document.getElementById("insert").style.display = '';
+            document.getElementById("id").value = '';
+            document.getElementById("name").value = '';
+            document.getElementById("email").value = '';
+            document.getElementById("mobile").value = '';
+            document.getElementById("id").disabled = false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #result, #form {
+            width: 600px; height: auto; padding: 10px; border: 2px solid green; float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <div id="form">
+        ID: <input type="text" name="" id="id">
+        <br>
+        <br>
+        Name : <input type="text" id="name">
+        <br><br>
+        Email : <input type="text" id="email">
+        <br><br>
+        Mobile : <input type="text" id="mobile">
+        <br><br>
+        <input type="submit" value="insert" onclick="insert()" id="insert">
+        <input type="submit" value="update" onclick="update()" id="update" style="display: none;">
+    </div>
+    <script>
+        function objAjax(){
+            this.student = "";
+            this.dispRecords = function(students){
+                var table = "<table border='1' cellpadding='10' width='500'><tr><td><input type='submit' value='+'></td><td>Id</td><td>Name</td><td>Email</td><td>Mobile</td><td>X</td></tr>";
+                for(i=0;i<students.length;i++)  {
+                    table += "<tr><td><input type='submit' value='+' onclick = 'obj.edit("+i+")' ></td><td>"+students[i].id +"</td><td>"+students[i].name+"</td><td>"+students[i].email+"</td><td>"+students[i].mobile+"</td><td><input type='submit' value='X' onclick='obj.del("+i+")'></td></tr>";
+                } 
+                table += "</table>";
+                 document.getElementById("result").innerHTML = table;
+            };
+
+            this.getData = function(){
+                var json;
+                if(window.XMLHttpRequest){ //except IE 5 & 6
+                json = new XMLHttpRequest();
+                }
+                else{ //ie 5 & 6
+                    json = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                json.onreadystatechange = function(){
+                if(json.status == 200 && json.readyState == 4){
+                    obj.student = JSON.parse(json.responseText);
+                    obj.dispRecords(obj.student);
+                    }
+                }
+
+                json.open("GET","jsonData.txt",true); //true - asynchrous, false - synchronous
+                json.send();
+
+            };
+        }
+
+        var obj = new objAjax();
+        obj.getData();
+    </script>
+</body>
+</html>
