@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px; height: auto; border: 2px solid red; margin: 10px; padding: 10px; text-align: justify;
+           
+        }
+        #before, #after {
+            width: 260px; height: auto; border: 2px solid green; margin: 10px;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("#box").mousedown(function(){
+            //     $("#box").animate({width:'400px',height:'300px'},2000)
+            // })
+                
+            // $("#box").mouseup(function(){
+            //     $("#box").animate({width:'300px',height:'200px'},2000)
+            // })
+                
+            $("#box").mousedown(function(){
+                $("#box").html("Uttar Pradesh is a state in northern India. Its city of Agra is home to the iconic Taj Mahal monument, a colossal, domed, white-marble mausoleum honouring the wife of 17th-century Mughal emperor Shah Jahan. Nearby are the red-brick walls of Agra Fort, a fortified palace dating to the 16th and 17th centuries. Capital Lucknow has Muslim memorial shrines Bara Imambara and calligraphy-adorned Chota Imambara.")
+            })
+                
+            $("#box").mouseup(function(){
+                $("#box").html(" Uttar Pradesh is a state in northern India. Its city of Agra is home to the iconic Taj Mahal monument, <h5>Read More..</h5>");
+            })
+                
+
+        })
+    </script>
+</head>
+<body>
+  
+   
+    <!-- before tag -->
+    <div id="box">
+        Uttar Pradesh is a state in northern India. Its city of Agra is home to the iconic Taj Mahal monument, 
+        <h5>Read More..</h5>
+    </div>
+    <!-- after tag -->
+  
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px; height: auto; border: 2px solid red; margin: 10px;
+        }
+        #before, #after {
+            width: 260px; height: auto; border: 2px solid green; margin: 10px;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var  j=1;
+          $("#btn1").click(function(){
+              var i = $("li").length+1;
+              $("#box").append("<li id=''>list item - "+i+"</li>")
+              i++;
+          })
+          $("#btn2").click(function(){
+              $("#box").prepend("<li id='after'>prepend content "+j+"</li>")
+              j++
+          })
+        })
+    </script>
+</head>
+<body>
+    <input type="submit" value="append" id="btn1">
+    <input type="submit" value="prepend" id="btn2">
+   
+    <!-- before tag -->
+    <div id="box">
+        <!-- prepend conten -->
+        <li>list item - 1</li>
+        <li>list item - 2</li>
+        <li>list item - 3</li>
+        <li>list item - 4</li>
+       <!-- append content -->
+    </div>
+    <!-- after tag -->
+  
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            *{
+                margin: 0px; padding: 0px;
+            }
+            html,body {
+                height: 150%;
+            }
+            .container {
+                position: fixed;
+                top: 0px; bottom: 0px; left: 0px; right: 0px; background: lightblue;
+            }
+            .popup {
+                width: 50%; height: 50%; background: green; position: absolute;
+                top: 0px; bottom: 0px; left: 0px; right: 0px; margin: auto; display:none;
+            }
+        </style>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).click(function(){
+                    $(".popup").show(2000);
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="popup"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px; height: auto; border: 2px solid red; margin: 10px; padding: 10px; text-align: justify;
+            display: none;
+        }
+        #before, #after {
+            width: 260px; height: auto; border: 2px solid green; margin: 10px;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#state").change(function(){
+                var state = $(this).val();
+                $("#box").fadeOut(1000,function(){
+                    if(state == 'AP state'){
+                    $("#box").fadeIn(2000).html("<h2>"+state+"</h2><p>The Associated Press is a U.S.-based not-for-profit news agency headquartered in New York City. Founded in 1846, it operates as a cooperative, unincorporated association. Wikipedia</p>");
+                }
+                else if(state == 'UP state'){
+                    $("#box").fadeIn(2000).html("<h2>"+state+"</h2><p>Uttar Pradesh is a state in northern India. Its city of Agra is home to the iconic Taj Mahal monument, a colossal, domed, white-marble mausoleum honouring the wife of 17th-century Mughal emperor Shah Jahan. Nearby are the red-brick walls of Agra Fort, a fortified palace dating to the 16th and 17th centuries. Capital Lucknow has Muslim memorial shrines Bara Imambara and calligraphy-adorned Chota Imambara.</p>");
+                }
+                
+                else if(state == 'TS state'){
+                    $("#box").fadeIn(2000).html("<h2>"+state+"</h2><p>Telangana is a state in southern India. In the capital of Hyderabad, the Charminar is a 16th-century mosque with 4 arches supporting 4 towering minarets. The monument overlooks the city's long-running Laad Bazaar. Once the seat of the Qutb Shahi dynasty, the sprawling Golconda Fort is a former diamond-trading center. In the city of Warangal, the centuries-old Warangal Fort features carved stone towers and gateways.</p>");
+                }
+                });
+               
+                
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <select name="" id="state">
+        <option>select state</option>
+        <option>AP state</option>
+        <option>UP state</option>
+        <option>TS state</option>
+    </select>
+   
+    <!-- before tag -->
+    <div id="box">
+      
+    </div>
+    <!-- after tag -->
+  
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <script src="jquery-3.3.1.min.js"></script>
+        <style>
+            *{
+                margin: 0px; padding: 0px;
+            }
+            .slider {
+                width: 1000px; height: 400px; background: lightgray; margin: 0px auto; position: relative;
+                overflow: hidden;
+            }
+            .slider .left, .slider .right {
+                position: absolute; padding: 20px 15px; background: rgb(39, 39, 187); color: white; text-decoration: none;
+                z-index: 1000;
+            }
+            .slider .left {
+                top: 170px;
+            }
+            .slider .right {
+                right: 0px; top: 170px;
+            }
+            .slider ul {
+                list-style: none; position: relative;
+            }
+            .slider ul li {
+                width: 1000px; height: 400px; float: left;
+            }
+            .slider ul li .image {
+                width: 1000px; height: 400px;
+            }
+        </style>
+        <script>
+            $(document).ready(function(){
+                var imgwidth = $(".slider ul li").width(); //1000
+                var imgcount = $(".slider ul li").length; //6
+                var ulwidth = imgwidth * imgcount; //6000
+                var stop1;
+                $(".slider ul").css({width: ulwidth, marginLeft: -imgwidth});
+
+                $(".left").click(sliderLogic)
+                
+                $(".right").click(function(){
+                    $(".slider ul").animate({left: -imgwidth},1500,function(){
+                        $(".slider ul li:first-child").appendTo(".slider ul");
+                        $(".slider ul").css("left","");
+                    })
+                })
+
+                function sliderLogic(){
+                    $(".slider ul").animate({left: imgwidth},1500,function(){
+                        $(".slider ul li:last-child").prependTo(".slider ul");
+                        $(".slider ul").css("left","");
+                    })
+              
+                }
+
+                $(".slider").mouseover(function(){
+                  stop1 = setInterval(function(){
+                        sliderLogic();
+                    },3000)
+                })
+                $(".slider").mouseout(function(){
+                    clearTimeout(stop1);
+                })
+
+            })
+        </script>
+    </head>
+    <body>
+        <div class="slider">
+            <a href="#" class="left"><</a>
+            <a href="#" class="right">></a>
+            <ul>
+                <li><img src="img/s1.jpg" alt="" class="image"></li>
+                <li><img src="img/s2.jpg" alt="" class="image"></li>
+                <li><img src="img/s3.jpg" alt="" class="image"></li>
+                <li><img src="img/s4.jpg" alt="" class="image"></li>
+                <li><img src="img/s5.jpg" alt="" class="image"></li>
+                <li><img src="img/s6.jpg" alt="" class="image"></li>
+            </ul>
+        </div>
+    </body>
+</html>
