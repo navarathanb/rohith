@@ -1,0 +1,2 @@
+<h2>Welcome User - James</h2>
+<p id="ind">Uttar Pradesh is a state in northern India. Its city of Agra is home to the iconic Taj Mahal monument, a colossal, domed, white-marble mausoleum honouring the wife of 17th-century Mughal emperor Shah Jahan. Nearby are the red-brick walls of Agra Fort, a fortified palace dating to the 16th and 17th centuries. Capital Lucknow has Muslim memorial shrines Bara Imambara and calligraphy-adorned Chota Imambara</p>

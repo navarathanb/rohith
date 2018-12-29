@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px; height: auto; border: 2px solid red; margin: 10px; padding: 10px; text-align: justify;
+           
+        }
+     
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("input").click(function(){
+           
+             
+              $("#box").children().animate({width:'250px', height:'350px', marginBottom:'5px'},2000,function(){
+                  $("#box").children().css("background","orange").html("<img src='img/1.jpg' style='width:100%'>");
+                  
+           });
+
+          })
+                
+
+        })
+    </script>
+</head>
+<body>
+  
+   <input type="submit" value="click">
+ 
+    <div id="box">
+       <p>para - 1</p>
+       <p>para - 2</p>
+       <p>para - 3</p>
+       <p>para - 4</p>
+       <p>para - 5</p>
+    </div>
+  
+  
+</body>
+</html>

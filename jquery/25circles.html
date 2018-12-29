@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        .box {
+           position: absolute; 
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(document).on('mousemove touchstart touchmove',function(event){
+                var d = document.createElement("div");
+                $(d).appendTo("body");
+
+                var rand1 = Math.random().toString().slice(2,5);
+                //0.234324234234 = '0.234324324' = 234
+                var rand2 = Math.random().toString().slice(2,5);
+                var rand3 = Math.random().toString().slice(2,4);
+                var rand4 = Math.random().toString().slice(2,4);
+                var rand5 = Math.random().toString().slice(2,4);
+
+                $(d).addClass("box"); //add class to the tag. removeClass("box") to remove class to the tag.
+
+                $(d).animate({left:event.pageX, top: event.pageY},10);
+
+                var ind = $(".box").length;
+
+                $(d).css({background: 'rgb('+rand3+','+rand4+','+rand5+')', zIndex: ind});
+
+                $(d).animate({width: '100px', height: '100px',borderRadius: '100px',left:rand1, top: rand2},2000);
+               
+                $(d).animate({width: '10px', height: '10px',borderRadius: '10px'},1000);
+                $(d).animate({width: '50px', height: '50px',borderRadius: '50px'},1000);
+
+                $(d).animate({width: '10px', height: '10px',borderRadius: '0px'},1000);
+
+
+                $(d).animate({width: '100px', height: '100px',borderRadius: '100px',left:rand2, top: rand1},1000);
+
+                $(d).animate({top: '0px', left: '0px', width: '0px', height: '0px'},1500);
+
+                setTimeout(function(){
+                    $(d).remove();
+                },7500);
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
