@@ -27,3 +27,7 @@ https://global.gotomeeting.com/play/recording/5a03b1ad939f25a771a39af05ea0678559
 #9
 https://global.gotomeeting.com/play/recording/20f5f2f9204cd204037e25de91fcf7eed098c1c7f9a7eab94fd2c82729a2a5c8
 
+https://global.gotomeeting.com/play/recording/20f5f2f9204cd204037e25de91fcf7eed098c1c7f9a7eab94fd2c82729a2a5c8
+
+https://global.gotomeeting.com/play/recording/71265b9ad931ce0fbbb124dca876f0ee5c2025e1b48a177b5c2569abbf49f4a8
+
