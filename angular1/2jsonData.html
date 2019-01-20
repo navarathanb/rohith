@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script>
+     
+    </script>
+</head>
+<body>
+    <!--angular1 : html with new properties -->
+    <div ng-app="">
+        <input type="text" ng-model="name" ng-init="students=[{name:'james',email:'james@gmail.com',mobile:12312312},{name:'james',email:'james@gmail.com',mobile:12312312},{name:'james',email:'james@gmail.com',mobile:12312312},{name:'james',email:'james@gmail.com',mobile:12312312}]">
+
+        <!-- ng-repeat => looping the data -->
+        <table border="1" cellpadding="10">
+            <tr><td>Name</td><td>Email</td><td>Mobile</td></tr>
+            <tr ng-repeat="data in students">
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.mobile}}</td>
+               
+            </tr>
+        </table>        
+    </div>
+</body>
+</html>

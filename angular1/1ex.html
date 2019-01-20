@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script>
+     
+    </script>
+</head>
+<body>
+    <!--angular1 : html with new properties -->
+    <div ng-app="">
+        <input type="text" ng-model="name" ng-init="name='james';student={name:'james',email:'james@gmail.com',mobile:12312312}">
+        <!-- ng-model -  to control the input field. -->
+        
+        <h2 ng-bind="name"></h2> 
+        <p ng-bind="'Name : '+student.name"></p>
+        <p ng-bind="'Email : '+student.email"></p>
+        <!-- expresion {{}} -->
+        <h3>{{'Mobile : '+student.mobile}}</h3>
+    </div>
+</body>
+</html>
