@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script>
+     
+    </script>
+    <style>
+        .box1, .box2 {
+            width: 600px; height: auto; border: 2px solid red; padding: 10px; float: left;
+        }
+    </style>
+</head>
+<body>
+    <!--angular1 : html with new properties -->
+    <div ng-app="app" ng-controller="ctrl">
+            <div class="box1">
+                <table border="1" cellpadding="10">
+                    <tr><td>Id</td><td>Name</td><td>Email</td><td>Mobile</td></tr>
+                    <tr ng-repeat="data in students">
+                        <td>{{data.id}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.mobile}}</td>
+                       
+                    </tr>
+                </table> 
+            </div>
+            <div class="box2">
+                <table>
+                    <tr>
+                        <td>Name</td><td><input type="text" ng-model="name" ></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td><td><input type="text" ng-model="email" ></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td><td><input type="text" ng-model="mobile" ></td>
+                    </tr>
+                    
+                    <tr>
+                        <td></td><td><input type="submit" value="Add" ng-click="add()"></td>
+                    </tr>
+
+                </table>
+            </div>
+                      
+    </div>
+    <script>
+        var app = angular.module('app',[]);//to define our agualr application called app;
+            app.controller('ctrl',function($scope, $http){
+               //
+               $http.get("jsonData.txt").success(function(response){
+                   $scope.students = response;
+               })
+            })
+
+    </script>
+
+</body>
+</html>

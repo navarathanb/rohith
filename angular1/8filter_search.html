@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script>
+     
+    </script>
+    <style>
+        .box1, .box2 {
+            width: 600px; height: auto; border: 2px solid red; padding: 10px; float: left;
+        }
+    </style>
+</head>
+<body>
+    <!--angular1 : html with new properties -->
+    <!-- dom api: 
+            ng-show= "true/false"
+            ng-hide = "true/false"
+            ng-disabled = "true/false"
+    -->
+    <div ng-app="app" ng-controller="ctrl" class="container">
+        <br><br>
+            <div class="row">
+                <div class="col-sm-6">
+                        <input type="text" ng-model="search" class="form-control" ng-keyup="disp()"><br>
+                                <table class="table table-bordered" ng-show="val4">
+                                    <tr><td>Edit</td><td ng-click="order('id')">Id</td><td  ng-click="order('name')">Name</td><td  ng-click="order('email')">Email</td><td ng-click="order('mobile')">Mobile</td><td>Del</td></tr>
+                                    <tr ng-repeat="data in students | orderBy:val3 | filter:search">
+                                        <td>
+                                            <button type="submit" class="btn btn-warning" ng-click="edit(data.id)">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </td>
+                                        <td>{{data.id}}</td>
+                                        <td>{{data.name | uppercase}}</td>
+                                        <td>{{data.email | lowercase}}</td>
+                                        <td>{{data.mobile | currency:'Rs'}}</td>
+                                        <td><button type="submit" class="btn btn-danger"  ng-click="del(data.id)">
+                                            <span class="glyphicon glyphicon-remove"></span>    
+                                        </button>
+                                        </td>
+                                       
+                                    </tr>
+                                </table> 
+                            
+                           
+
+                </div>
+                <div class="col-sm-4">
+                       
+                     
+                     <form action="" method="POST" role="form">
+                         <legend>Studet Register</legend>
+                     
+                         <div class="form-group">
+                             <label for="">Name</label>
+                             <input type="text" class="form-control" id="" ng-model="name" placeholder="Input field">
+                         </div>
+                         <div class="form-group">
+                             <label for="">Email</label>
+                             <input type="text" class="form-control" id=""  ng-model="email" placeholder="Input field">
+                         </div>
+                         <div class="form-group">
+                             <label for="">Mobile</label>
+                             <input type="text" class="form-control" id="" ng-model="mobile" placeholder="Input field">
+                         </div>
+                     
+                         
+                     
+                         <button type="submit" class="btn btn-primary" ng-show="val1" ng-click="add()">Add</button>
+                         <button type="submit" class="btn btn-success" ng-show="val2" ng-click="update()">UPdate</button>
+                     </form>
+                     
+                       
+                </div>
+            </div>
+                      
+    </div>
+    <script>
+        var app = angular.module('app',[]);//to define our agualr application called app;
+            app.controller('ctrl',function($scope, $http){
+
+                $scope.val1 = true;
+                $scope.val2 = false;
+                $scope.val4 = false;
+
+               //ext json data.
+               $http.get("jsonData.txt").success(function(response){
+                   $scope.students = response;
+               })
+
+                //insert records.
+                $scope.add = function(){
+                  
+                    var id = $scope.students[ $scope.students.length-1].id+1;
+                    // alert(id)
+                   $scope.students.push({"name":$scope.name,"email":$scope.email,"mobile":$scope.mobile,"id":id});
+
+                   $scope.name = "";
+                   $scope.email = "";
+                   $scope.mobile = "";
+
+                }   
+
+                //edit the records.
+                $scope.edit = function(id){
+                    // alert(id);
+                    $scope.val1 = false;
+                    $scope.val2 = true;
+                    for(i=0;i<$scope.students.length;i++){
+                        if($scope.students[i].id == id){
+                            $scope.name = $scope.students[i].name;
+                            $scope.email = $scope.students[i].email;
+                            $scope.mobile = $scope.students[i].mobile;
+                            $scope.id = id;
+                        }
+                    }
+                }
+
+                //update the records.
+                $scope.update = function(){
+                    for(i=0;i<$scope.students.length;i++){
+                        if($scope.students[i].id == $scope.id){
+                            $scope.students.splice(i,1,{"name":$scope.name,"email":$scope.email,"mobile":$scope.mobile,"id":$scope.id});
+                            $scope.name = "";
+                            $scope.email = "";
+                            $scope.mobile = "";
+                            $scope.id = "";
+                            $scope.val1 = true;
+                            $scope.val2 = false;
+                        }
+                    }
+                } 
+
+                //delete the record.
+                $scope.del = function(id){
+                    for(i=0;i<$scope.students.length;i++){
+                        if($scope.students[i].id == id){
+                            $scope.students.splice(i,1);
+                        }
+                    }
+                }
+                //order by filter
+                $scope.order = function(ord){
+                    $scope.val3 = ord;
+                }
+
+                $scope.disp = function(){
+                    if($scope.search.length>0){
+                        $scope.val4 = true;
+                    }else{
+                        $scope.val4 = false;
+                    }
+                }
+            })
+
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
