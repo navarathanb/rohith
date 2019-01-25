@@ -35,3 +35,10 @@ https://global.gotomeeting.com/play/recording/71265b9ad931ce0fbbb124dca876f0ee5c
 anglar1:
 https://global.gotomeeting.com/play/recording/d8ca243715673a7e9d5f8415e20903d6f67c512238138e369923c5f24ae79a1a
 
+https://global.gotomeeting.com/play/recording/2fc4b4a49fc0afe0d4ff844c41373d6fc5dbc92b8cb6dd9874ac264ea515b64b
+
+https://global.gotomeeting.com/play/recording/cb28b9fa76d298c19a81b97326ebfb851acc3ec55eb88fc3e150859230a96b7e
+
+https://global.gotomeeting.com/play/recording/c704bee41329811ad2f252aef97b1dad2dbda8cbb11fd965ad9cbd038752c3b8
+
+https://global.gotomeeting.com/play/recording/708b2226d53fd3ccc130fc92fb21c399ab696030576e82985aa1137e6f1e3362
