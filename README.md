@@ -42,3 +42,5 @@ https://global.gotomeeting.com/play/recording/cb28b9fa76d298c19a81b97326ebfb851a
 https://global.gotomeeting.com/play/recording/c704bee41329811ad2f252aef97b1dad2dbda8cbb11fd965ad9cbd038752c3b8
 
 https://global.gotomeeting.com/play/recording/708b2226d53fd3ccc130fc92fb21c399ab696030576e82985aa1137e6f1e3362
+
+https://global.gotomeeting.com/play/recording/98371bdd00117608855c929798cf945c3e1748c004601190247e2c214488a4b6
